@@ -2,7 +2,7 @@ resources:
   - name: source-code
     type: git
     source:
-      uri: git@github.com:Spidertracks/ops.concourse.git-resource.git
+      uri: git@github.com:Spidertracks/ops.concourse.non-detached-head-git-resource.git
       branch: master
       private_key: ((github_private_rsa_key))
 
@@ -35,7 +35,7 @@ jobs:
           args:
             - -xce
             - terraform init &&  terraform apply --auto-approve
-    - aggregate:
+    - in_parallel:
       - put: non-detached-head-git-resource
         params:
           build: source-code/
