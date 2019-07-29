@@ -1,3 +1,6 @@
+# FORKED
+This repo is forked from a non-merged PR to the git-resource repo. see: https://github.com/concourse/git-resource/pull/257
+
 # Git Resource
 
 Tracks the commits in a [git](http://git-scm.com/) repository.
